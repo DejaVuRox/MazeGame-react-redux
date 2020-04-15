@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.scss';
 
+import Maze from './Components/Maze/Maze'
+
 function App() {
   return (
     <div className="App">
-      <h1>Boilerplate React/Redux/Sass</h1>
+      <Maze />
     </div>
   );
 }
