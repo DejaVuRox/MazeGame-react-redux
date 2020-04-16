@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Matter from "matter-js";
+import './Maze.scss'
 
 class Maze extends Component {
   componentDidMount() {
@@ -10,8 +11,8 @@ class Maze extends Component {
     const world = engine.world;
 
     const cells = 10;
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const width = 800;
+    const height = 800;
     const unitLength = width / cells;
 
     const render = Render.create({
@@ -29,18 +30,30 @@ class Maze extends Component {
       //top
       Bodies.rectangle(width / 2, 0, width, 2, {
         isStatic: true,
+        render: {
+          fillStyle: "#66fcf1",
+        },
       }),
       //bottom
       Bodies.rectangle(width / 2, height, width, 2, {
         isStatic: true,
+        render: {
+          fillStyle: "#66fcf1",
+        },
       }),
       //left
       Bodies.rectangle(0, height / 2, 2, height, {
         isStatic: true,
+        render: {
+          fillStyle: "#66fcf1",
+        },
       }),
       //right
       Bodies.rectangle(width, height / 2, 2, height, {
         isStatic: true,
+        render: {
+          fillStyle: "#66fcf1",
+        },
       }),
     ];
 
@@ -144,8 +157,11 @@ class Maze extends Component {
           unitLength,
           5,
           {
-            label: 'wall',
+            label: "wall",
             isStatic: true,
+            render: {
+              fillStyle: '#66fcf1'
+            }
           }
         );
         World.add(world, wall);
@@ -163,8 +179,11 @@ class Maze extends Component {
           5,
           unitLength,
           {
-            label: 'wall',
+            label: "wall",
             isStatic: true,
+            render: {
+              fillStyle: "#66fcf1",
+            },
           }
         );
         World.add(world, wall);
@@ -180,6 +199,9 @@ class Maze extends Component {
       {
         label: "goal",
         isStatic: true,
+        render: {
+          fillStyle: "#afd275",
+        },
       }
     );
     World.add(world, goal);
@@ -187,6 +209,9 @@ class Maze extends Component {
     //Ball
     const ball = Bodies.circle(unitLength / 2, unitLength / 2, unitLength / 4, {
       label: "ball",
+      render: {
+        fillStyle: "#e7717d",
+      },
     });
     World.add(world, ball);
     document.addEventListener("keydown", (e) => {
@@ -232,7 +257,7 @@ class Maze extends Component {
   }
 
   render() {
-    return <div></div>;
+  return <div></div>;
   }
 }
 

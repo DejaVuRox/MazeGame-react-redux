@@ -1,12 +1,14 @@
-import React from 'react';
-import './App.scss';
+import React from "react";
+import "./App.scss";
 
-import Maze from './Components/Maze/Maze'
+import Maze from "./Components/Maze/Maze";
 
 function App() {
   return (
     <div className="App">
-      <Maze />
+      <div className="maze">
+        <Maze />
+      </div>
     </div>
   );
 }

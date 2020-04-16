@@ -1,8 +1,19 @@
 :root {
   //App Colors
-  
+  --background-color: #0b0c10;
+  --background-maze-color: #1f2833;
 }
 
 .App {
-  
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
+
+canvas {
+  margin: 10rem auto;
+  border-radius: 5px;
+  background: var(--background-maze-color) !important;
+}
+
+
